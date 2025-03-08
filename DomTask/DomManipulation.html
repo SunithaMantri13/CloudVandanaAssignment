@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Image Slider</title>
+        <style>
+            body {
+                text-align: center;
+            }
+            img {
+                display: block;
+                margin: 20px auto;
+                border-radius: 10px;
+            }
+            button {
+                padding: 8px 15px;
+                margin: 5px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    
+<body>
+    <h2>Image Slider</h2>
+    <img id="slider" src="/DomTask/images/boyimg.jpg" width="400" height="300">
+    <br>
+    <button onclick="prevImage()">Previous</button>
+    <button onclick="nextImage()">Next</button>
+    <script>
+        let images = ["/DomTask/images/Addimg.jpg", "/DomTask/images/s1.jpg", "/DomTask/images/s2.jpg"];
+        let index = 0;
+        function prevImage() {
+            index = (index - 1 + images.length) % images.length;
+            document.getElementById("slider").src = images[index];
+        }
+        function nextImage() {
+            index = (index + 1) % images.length;
+            document.getElementById("slider").src = images[index];
+        }
+    </script>
+</body>
+</html>
